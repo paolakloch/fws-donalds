@@ -33,7 +33,6 @@ export const ProductHeader = ({ product }: ProductHeaderProps) => {
                     <ScrollTextIcon />
                 </Button>
             </div>
-            {/* 'testestest' */}
             <Image
                 src={product.imageUrl}
                 alt={product.name}
