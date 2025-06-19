@@ -12,7 +12,6 @@ interface ProductHeaderProps {
 export const ProductHeader = ({ product }: ProductHeaderProps) => {
 
     const { back } = useRouter()
-    test
     return (
         <div className="relative w-full h-[300px]">
             <div className="relative h-[250px] w-full">
