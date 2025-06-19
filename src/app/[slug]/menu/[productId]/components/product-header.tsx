@@ -12,7 +12,7 @@ interface ProductHeaderProps {
 export const ProductHeader = ({ product }: ProductHeaderProps) => {
 
     const { back } = useRouter()
-test
+    test
     return (
         <div className="relative w-full h-[300px]">
             <div className="relative h-[250px] w-full">
@@ -32,7 +32,7 @@ test
                 >
                     <ScrollTextIcon />
                 </Button>
-
+                test
             </div>
             <Image
                 src={product.imageUrl}
