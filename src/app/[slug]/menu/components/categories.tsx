@@ -56,7 +56,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
                     <p>Aberto!</p>
                 </div>
                 <ScrollArea className="w-full mt-5">
-                    <div className="flex w-max space-x-4  pb-4 pt-0">
+                    <div className="flex w-max space-x-4 pb-4 pt-0">
                         {restaurant.menuCategories.map(category =>
                             <Button onClick={() => handleCategoryClick(category)} className="rounded-full"
                                 key={category.id}
@@ -69,7 +69,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
                     <ScrollBar orientation="horizontal" />
 
                 </ScrollArea>
-                <h3 className="px-5 pt-2 font-semibold">{selectedCategory.name}</h3>
+                <h3 className="pt-2 font-semibold">{selectedCategory.name}</h3>
 
                 {selectedCategory && (
                     <Products products={selectedCategory.products} />
