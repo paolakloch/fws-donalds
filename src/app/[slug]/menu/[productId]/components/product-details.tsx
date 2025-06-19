@@ -32,7 +32,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
                 <h2 className="text-xl font-semibold mt-1">{product.name}</h2>
 
-                <div className="flex items-center justify-between mt-1">
+                <div className="flex items-center justify-between mt-3">
                     <h3 className="text-xl font-semibold">{formatCurrency(product.price)}</h3>
                     <div className="flex items-center gap-3 text-center">
                         <Button variant="outline" className="w-8 h-8 rounded-xl" disabled={quantity === 1} onClick={() => setQuantity(quantity - 1)}>
@@ -56,9 +56,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                         <h4 className="font-semi-bold">Ingredientes</h4>
                     </div>
 
-                    <p className="text-sm text-muted-foreground">{product.ingredients}</p>
-
-
+                    <ul className="list-disc px-7 text-muted-foreground">
+                        {product.ingredients.map((ingredient) => (
+                            <li key={ingredient}>{ingredient}</li>
+                        ))}
+                    </ul>
                 </div>
 
             </div>
