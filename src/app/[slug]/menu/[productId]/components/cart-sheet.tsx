@@ -1,5 +1,7 @@
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { useContext } from "react";
+
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+
 import { CartContext } from "../../context/cart";
 
 export const CartSheet = () => {

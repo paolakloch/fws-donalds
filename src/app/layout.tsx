@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+
 import { CartProvider } from "./[slug]/menu/context/cart";
 
 const poppins = Poppins({
