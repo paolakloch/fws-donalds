@@ -7,6 +7,7 @@ import { CartItem } from "./cart-item";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/helpers/format-currency";
+import { DrawerClose, DrawerContent, DrawerFooter, DrawerDescription, DrawerTitle, DrawerHeader, DrawerTrigger, Drawer } from "@/components/ui/drawer";
 
 export const CartSheet = () => {
 
@@ -29,7 +30,7 @@ export const CartSheet = () => {
                             <p className="font-bold text-sm">{formatCurrency(total)}</p>
                         </CardContent>
                     </Card>
-                    <Button className="w-full rounded-lg" >Finalizar Pedido</Button>
+
                 </div>
             </SheetContent>
         </Sheet>
