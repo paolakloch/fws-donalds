@@ -16,7 +16,7 @@ export const CartSheet = () => {
                     <SheetTitle className="text-left mb-6">Sacola</SheetTitle>
                 </SheetHeader>
                 {products.map(product =>
-                    <CartItem item={product} />
+                    <CartItem key={product.name} item={product} />
                 )}
             </SheetContent>
         </Sheet>

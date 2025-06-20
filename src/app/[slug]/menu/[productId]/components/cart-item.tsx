@@ -12,7 +12,7 @@ interface CartItemProps {
 
 export const CartItem = ({ item }: CartItemProps) => {
 
-    const { decreaseProduct, addProduct } = useContext(CartContext)
+    const { decreaseProduct, increaseProduct, removeProduct } = useContext(CartContext)
 
     return (
         <div className="flex items-center  mb-6 justify-between">
@@ -23,12 +23,12 @@ export const CartItem = ({ item }: CartItemProps) => {
                 <p className="mb-1 text-sm truncate m-w-[90%]">{item.name}</p>
                 <div className="flex justify-between">
                     <p>{formatCurrency(item.price)}</p>
-                    <Button variant="ghost"> {<TrashIcon />}</Button>
+                    <Button onClick={() => removeProduct(item)} variant="ghost"> {<TrashIcon />}</Button>
                 </div>
                 <div className="flex items-center gap-2 text-center">
                     <Button disabled={item.quantity == 1} onClick={() => decreaseProduct(item)} className="h-7 w-7 rounded-lg" > <ChevronLeftIcon /></Button>
                     <p>{item.quantity}</p>
-                    <Button onClick={() => addProduct(item)} className="h-7 w-7 rounded-lg" variant="destructive"> <ChevronRightIcon /></Button>
+                    <Button onClick={() => increaseProduct(item)} className="h-7 w-7 rounded-lg" variant="destructive"> <ChevronRightIcon /></Button>
                 </div>
 
             </div>
