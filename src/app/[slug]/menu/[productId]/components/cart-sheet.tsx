@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 
 import { CartContext } from "../../context/cart";
+import { CartItem } from "./cart-item";
 
 export const CartSheet = () => {
 
@@ -12,14 +13,10 @@ export const CartSheet = () => {
         <Sheet open={isOpen} onOpenChange={toggleCart}>
             <SheetContent className="w-[400px] sm:w-[540px]">
                 <SheetHeader>
-                    <SheetTitle>Are you absolutely sure?</SheetTitle>
-                    <SheetDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </SheetDescription>
+                    <SheetTitle className="text-left mb-6">Sacola</SheetTitle>
                 </SheetHeader>
                 {products.map(product =>
-                    <h1 key={product.id}>{product.name} - {product.quantity}</h1>
+                    <CartItem item={product} />
                 )}
             </SheetContent>
         </Sheet>
