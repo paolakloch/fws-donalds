@@ -2,13 +2,9 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { useContext } from "react";
 import { CartContext } from "../../context/cart";
 
-interface CartSheetProps {
-    toggleCart: () => void;
-}
+export const CartSheet = () => {
 
-export const CartSheet = ({ toggleCart }: CartSheetProps) => {
-
-    const { isOpen } = useContext(CartContext)
+    const { isOpen, toggleCart, products } = useContext(CartContext)
 
     return (
         <Sheet open={isOpen} onOpenChange={toggleCart}>
@@ -20,6 +16,9 @@ export const CartSheet = ({ toggleCart }: CartSheetProps) => {
                         and remove your data from our servers.
                     </SheetDescription>
                 </SheetHeader>
+                {products.map(product =>
+                    <h1 key={product.id}>{product.name} - {product.quantity}</h1>
+                )}
             </SheetContent>
         </Sheet>
     )

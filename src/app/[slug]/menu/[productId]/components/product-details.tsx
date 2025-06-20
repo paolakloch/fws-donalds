@@ -18,9 +18,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
     const [quantity, setQuantity] = useState(1)
 
-    const { toggleCart } = useContext(CartContext)
+    const { toggleCart, addProduct } = useContext(CartContext)
 
     const handleToggleCart = () => {
+        addProduct({
+            ...product,
+            quantity,
+        })
         toggleCart()
     }
 
